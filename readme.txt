@@ -11,3 +11,8 @@ bundle exec rspec --init
   bundle exec rackup
   и выполнить запрос
   curl localhost:9292/expenses/2017-06-10 -w "\n"
+Настройка юнит тестов:
+  в spec_helper
+  убрать begin-end
+  закоментировать config.warnings = true и config.profile_examples = 10
+  добавить внутри RSpec.configure
