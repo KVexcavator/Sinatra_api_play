@@ -46,3 +46,4 @@ bundle exec rspec --init
   подключить в файле теста:
   require_relative '../../../config/sequel'
   require_relative '../../support/db'
+Если у нас несколько expect в одном тесте, то для того что бы тестирование продолжалось после падения it 'successfully saves the expense in the DB', :aggregate_failures do или еще выше RSpec.describe Ledger, :aggregate_failures do
