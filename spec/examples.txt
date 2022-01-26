@@ -1,15 +1,15 @@
 example_id                                         | status | run_time        |
 -------------------------------------------------- | ------ | --------------- |
-./spec/acceptance/expense_tracker_api_spec.rb[1:1] | passed | 0.05454 seconds |
-./spec/integration/app/ledger_spec.rb[1:1:1]       | passed | 0.008 seconds   |
-./spec/integration/app/ledger_spec.rb[1:1:2:1]     | passed | 0.00132 seconds |
-./spec/integration/app/ledger_spec.rb[1:2:1]       | passed | 0.00292 seconds |
-./spec/integration/app/ledger_spec.rb[1:2:2]       | passed | 0.00121 seconds |
-./spec/unit/app/api_spec.rb[1:1:1:1]               | passed | 0.00277 seconds |
-./spec/unit/app/api_spec.rb[1:1:1:2]               | passed | 0.0021 seconds  |
-./spec/unit/app/api_spec.rb[1:1:2:1]               | passed | 0.01329 seconds |
-./spec/unit/app/api_spec.rb[1:1:2:2]               | passed | 0.00204 seconds |
-./spec/unit/app/api_spec.rb[1:2:1:1]               | passed | 0.00403 seconds |
-./spec/unit/app/api_spec.rb[1:2:1:2]               | passed | 0.00204 seconds |
-./spec/unit/app/api_spec.rb[1:2:2:1]               | passed | 0.00232 seconds |
-./spec/unit/app/api_spec.rb[1:2:2:2]               | passed | 0.00228 seconds |
+./spec/acceptance/expense_tracker_api_spec.rb[1:1] | passed | 0.0518 seconds  |
+./spec/integration/app/ledger_spec.rb[1:1:1]       | passed | 0.00766 seconds |
+./spec/integration/app/ledger_spec.rb[1:1:2:1]     | passed | 0.00147 seconds |
+./spec/integration/app/ledger_spec.rb[1:2:1]       | passed | 0.00294 seconds |
+./spec/integration/app/ledger_spec.rb[1:2:2]       | passed | 0.00353 seconds |
+./spec/unit/app/api_spec.rb[1:1:1:1]               | passed | 0.00216 seconds |
+./spec/unit/app/api_spec.rb[1:1:1:2]               | passed | 0.00195 seconds |
+./spec/unit/app/api_spec.rb[1:1:2:1]               | passed | 0.002 seconds   |
+./spec/unit/app/api_spec.rb[1:1:2:2]               | passed | 0.00221 seconds |
+./spec/unit/app/api_spec.rb[1:2:1:1]               | passed | 0.00209 seconds |
+./spec/unit/app/api_spec.rb[1:2:1:2]               | passed | 0.00207 seconds |
+./spec/unit/app/api_spec.rb[1:2:2:1]               | passed | 0.00209 seconds |
+./spec/unit/app/api_spec.rb[1:2:2:2]               | passed | 0.0141 seconds  |

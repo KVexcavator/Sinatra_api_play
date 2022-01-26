@@ -55,3 +55,18 @@ bundle exec rspec --init
   подключить в файле теста:
   require_relative '../../../config/sequel'
 Если у нас несколько expect в одном тесте, то для того что бы тестирование продолжалось после падения it 'successfully saves the expense in the DB', :aggregate_failures do или еще выше RSpec.describe Ledger, :aggregate_failures do
+- викс прдодакшена:
+  запускамем сервер bundle exec rackup
+  curl localhost:9292/expenses/2017-06-10 -w "\n"
+  если ошибка типа
+  NameError: uninitialized constant ExpenseTracker::Ledger::DB
+  поиск по тексту, найти где прикручено
+  grep config/sequel -r . --exclude-dir=.git
+  волщебная команда вызова спек по отдульности
+  (for f in `find spec -iname '*_spec.rb'`; do
+    echo "$f:"
+    bundle exec rspec $f -fp || exit 1
+  done)
+  curl localhost:9292/expenses --data '{"payee":"Zoo", "amount":10, "date":"2017-06-10"}' -w "\n"
+  curl localhost:9292/expenses --data '{"payee":"Starbucks", "amount":7.5,"date":"2017-06-10"}' -w "\n"
+  curl localhost:9292/expenses/2017-06-10 -w "\n"
