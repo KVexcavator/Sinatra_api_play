@@ -32,5 +32,17 @@ bundle exec rspec --init
       end
     end
   end
-  Запуск миграции для дев дб(в тестах сама запустится):
+  Запуск миграции для дев дб:
   bundle exec sequel -m ./db/migrations sqlite://db/development.db --echo
+  Конфинурирование ДБ для тестов:
+  в spec/support/db.rb
+  RSpec.configure do |c|
+    c.before(:suite) do # хук запуска перед каждым тестом
+      Sequel.extension :migration
+      Sequel::Migrator.run(DB, 'db/migrations') # создает миграцию
+      DB[:expenses].truncate # чистит
+    end
+  end
+  подключить в файле теста:
+  require_relative '../../../config/sequel'
+  require_relative '../../support/db'
