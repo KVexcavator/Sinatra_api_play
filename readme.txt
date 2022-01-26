@@ -42,8 +42,16 @@ bundle exec rspec --init
       Sequel::Migrator.run(DB, 'db/migrations') # создает миграцию
       DB[:expenses].truncate # чистит
     end
+    # хук изоляции, надо добавлять метаданные в описании спеки :db.
+    # И добавить в kонфиг
+    # RSpec.configure do |config|
+      # config.when_first_matching_example_defined(:db) do
+        # require_relative 'support/db'
+      # end
+    c.around(:example, :db) do |example|
+      DB.transaction(rollback: :always) { example.run }
+    end
   end
   подключить в файле теста:
   require_relative '../../../config/sequel'
-  require_relative '../../support/db'
 Если у нас несколько expect в одном тесте, то для того что бы тестирование продолжалось после падения it 'successfully saves the expense in the DB', :aggregate_failures do или еще выше RSpec.describe Ledger, :aggregate_failures do
