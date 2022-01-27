@@ -1,0 +1,49 @@
+I, [2022-01-27T14:20:37.522623 #13721]  INFO -- : 
+ ---Starting example: records submitted expenses
+I, [2022-01-27T14:20:37.523060 #13721]  INFO -- : (0.000096s) BEGIN
+I, [2022-01-27T14:20:37.545980 #13721]  INFO -- : (0.000338s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2022-01-27T14:20:37.546505 #13721]  INFO -- : (0.000182s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.552478 #13721]  INFO -- : (0.000106s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2022-01-27T14:20:37.552915 #13721]  INFO -- : (0.000127s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.553781 #13721]  INFO -- : (0.000064s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2022-01-27T14:20:37.554148 #13721]  INFO -- : (0.000092s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.556889 #13721]  INFO -- : (0.000513s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2022-01-27T14:20:37.562069 #13721]  INFO -- : (0.000216s) ROLLBACK
+I, [2022-01-27T14:20:37.562210 #13721]  INFO -- : 
+ ---Ending example: records submitted expenses
+I, [2022-01-27T14:20:37.564966 #13721]  INFO -- : 
+ ---Starting example: successfully saves the expense in the DB
+I, [2022-01-27T14:20:37.565371 #13721]  INFO -- : (0.000095s) BEGIN
+I, [2022-01-27T14:20:37.566584 #13721]  INFO -- : (0.000533s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2022-01-27T14:20:37.567173 #13721]  INFO -- : (0.000257s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.572840 #13721]  INFO -- : (0.000335s) SELECT * FROM `expenses`
+I, [2022-01-27T14:20:37.575417 #13721]  INFO -- : (0.000333s) ROLLBACK
+I, [2022-01-27T14:20:37.575689 #13721]  INFO -- : 
+ ---Ending example: successfully saves the expense in the DB
+I, [2022-01-27T14:20:37.576558 #13721]  INFO -- : 
+ ---Starting example: rejects the expense as invalid
+I, [2022-01-27T14:20:37.576877 #13721]  INFO -- : (0.000089s) BEGIN
+I, [2022-01-27T14:20:37.577782 #13721]  INFO -- : (0.000219s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.578096 #13721]  INFO -- : (0.000060s) ROLLBACK
+I, [2022-01-27T14:20:37.578260 #13721]  INFO -- : 
+ ---Ending example: rejects the expense as invalid
+I, [2022-01-27T14:20:37.579181 #13721]  INFO -- : 
+ ---Starting example: returns all expenses for the provided date
+I, [2022-01-27T14:20:37.579508 #13721]  INFO -- : (0.000085s) BEGIN
+I, [2022-01-27T14:20:37.580340 #13721]  INFO -- : (0.000398s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2022-01-27T14:20:37.580745 #13721]  INFO -- : (0.000201s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.581437 #13721]  INFO -- : (0.000127s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2022-01-27T14:20:37.581821 #13721]  INFO -- : (0.000176s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.582249 #13721]  INFO -- : (0.000099s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2022-01-27T14:20:37.582545 #13721]  INFO -- : (0.000144s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2022-01-27T14:20:37.583197 #13721]  INFO -- : (0.000338s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2022-01-27T14:20:37.584005 #13721]  INFO -- : (0.000271s) ROLLBACK
+I, [2022-01-27T14:20:37.584199 #13721]  INFO -- : 
+ ---Ending example: returns all expenses for the provided date
+I, [2022-01-27T14:20:37.584771 #13721]  INFO -- : 
+ ---Starting example: returns a blank array when there are no matching expenses
+I, [2022-01-27T14:20:37.585041 #13721]  INFO -- : (0.000078s) BEGIN
+I, [2022-01-27T14:20:37.585881 #13721]  INFO -- : (0.000310s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2022-01-27T14:20:37.586234 #13721]  INFO -- : (0.000054s) ROLLBACK
+I, [2022-01-27T14:20:37.586354 #13721]  INFO -- : 
+ ---Ending example: returns a blank array when there are no matching expenses
